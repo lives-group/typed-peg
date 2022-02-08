@@ -1,29 +1,38 @@
-#lang racket
+#lang typed/racket
 
 (provide (all-defined-out))
 
 ;; definition of parse trees
+
+(define-type tree
+  (U tunit
+     tchr
+     tpair
+     tleft
+     tright
+     tlist))
 
 (struct tunit
   ()
   #:prefab)
 
 (struct tchr
-  (symb)
+  ([symb : Char])
   #:prefab)
 
 (struct tpair
-  (fst snd)
+  ([fst : tree]
+   [snd : tree])
   #:prefab)
 
 (struct tleft
-  (tree)
+  ([the-tree : tree])
   #:prefab)
 
 (struct tright
-  (tree)
+  ([the-tree : tree])
   #:prefab)
 
 (struct tlist
-  (elems)
+  ([elems : (Listof tree)])
   #:prefab)

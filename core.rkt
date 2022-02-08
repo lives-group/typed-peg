@@ -1,37 +1,57 @@
-#lang racket
+#lang typed/racket
 
 (provide (all-defined-out))
 
 ;; definition of the core expressions
+
+(define-type p-expr
+  (U peps
+     pchr
+     pany
+     pvar
+     pcat
+     pchoice
+     pneg
+     pstar))
 
 (struct peps
   ()
   #:prefab)
 
 (struct pchr
-  (symb)
+  ([symb : Char])
+  #:prefab)
+
+(struct pany
+  ()
   #:prefab)
 
 (struct pvar
-  (name)
+  ([name : String])
   #:prefab)
 
 (struct pcat
-  (left right)
+  ([left  : p-expr]
+   [right : p-expr])
   #:prefab)
 
 (struct pchoice
-  (left right)
+  ([left  : p-expr]
+   [right : p-expr])
   #:prefab)
 
 (struct pneg
-  (expr)
+  ([expr : p-expr])
   #:prefab)
 
 (struct pstar
-  (expr)
+  ([expr : p-expr])
   #:prefab)
 
+(define-type Rules
+  (Listof (Pairof String p-expr)))
+
 (struct peg-grammar
-  (rules start)
+  ([rules : Rules ]
+   [start : p-expr])
   #:prefab)

@@ -1,14 +1,26 @@
-#lang racket
+#lang typed/racket
 
 (require typed-peg/core
          typed-peg/tree)
 
 (provide (rename-out [pretty peg-pretty]))
 
+(struct error-type
+  ([the-error : String])
+  #:prefab)
+
+(define-type pretty-type
+  (U (Listof Char) error-type))
+
+(: pretty (-> peg-grammar tree (U String error-type)))
 (define (pretty g t)
   (match g
-    [(peg-grammar rs p) (list->string (ppr rs p t))]))
+    [(peg-grammar rs p)
+     (match (ppr rs p t)
+       [(error-type err) (error-type err)]
+       [str (list->string str)])]))
 
+(: ppr-eps (-> tree pretty-type))
 (define (ppr-eps t)
   (match t
     [(tunit) '()]
@@ -55,7 +67,7 @@
     [(tunit) '()]
     [t1 (raise 'type-error)]))
 
-
+(: ppr (-> Rules p-expr tree pretty-type))
 (define (ppr g e t)
   (match e
     [(peps) (ppr-eps t)]
