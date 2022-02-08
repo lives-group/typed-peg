@@ -1,0 +1,16 @@
+#+title: Tasks
+
+* DONE Better formatting on Z3 script
+* DONE improve traceability of constraints
+* DONE generate a valid random identifier to ensure non empty NT type on z3 script
+* DONE Generate a file containing the result of Z3 solver
+* DONE create dialects for debugging 
+* DONE Integrate type inference engine in `#lang peg`
+* DONE Create a debug dialect for type inference only.
+* TODO Add support to syntax highlighting in Dr. Racket.
+* TODO Fix github CI script to build the code. 
+**   It need to install z3
+* TODO Add a proper test suit to the inference engine
+* TODO Change generated script to include names for getting unsat cores
+* TODO Generate error messages from unsat cores.
+* TODO Refactor the code to use typed/racket.
