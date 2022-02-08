@@ -1,4 +1,4 @@
-#lang typed-peg/debug/infer-only
+#lang typed-peg
 
 A <-- 'a' A 'b' / epsilon;
 

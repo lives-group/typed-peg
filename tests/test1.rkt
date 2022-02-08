@@ -1,3 +1,3 @@
-#lang typed-peg/debug/z3-script-only
+#lang typed-peg
 
 start: ('a' 'a')* 

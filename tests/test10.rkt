@@ -1,3 +1,3 @@
-#lang typed-peg/debug/constraints-only
+#lang typed-peg/untyped
 
 start: 'a' (! 'b' / 'c')*

@@ -1,4 +1,4 @@
-#lang typed-peg/debug/constraints-only
+#lang typed-peg
 
 A <-- 'a' A / 'a';
 
