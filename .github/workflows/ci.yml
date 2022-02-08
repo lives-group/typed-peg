@@ -13,7 +13,6 @@ jobs:
         uses: pavpanchekha/setup-z3@1.2.2
         with:
           version: 4.8.14
-          distribution: ubuntu-18.04
       - uses: actions/checkout@v2
       - uses: Bogdanp/setup-racket@v0.12
         with:
