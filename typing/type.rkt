@@ -6,7 +6,7 @@
 
 (struct type
   (null? head-set)
-  #:transparent)
+  #:prefab)
 
 ; operations on types
 
