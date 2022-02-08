@@ -6,32 +6,40 @@
 
 (struct peps
   ()
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct pchr
   (symb)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct pvar
   (name)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct pcat
   (left right)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct pchoice
   (left right)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct pneg
   (expr)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct pstar
   (expr)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct peg-grammar
   (rules start)
-  #:transparent)
+  #:transparent
+  #:prefab)

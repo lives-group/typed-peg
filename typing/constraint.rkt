@@ -6,50 +6,62 @@
 
 (struct constr-F
   ()
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct constr-T
   ()
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct constr-and
   (left right)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct constr-eq
   (left right)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct constr-ex
   (tyvar constr)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct constr-def
   (non-term ty constr)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 ; term syntax
 
 (struct term-type
   (type)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct term-tyvar
   (tyvar)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct term-plus
   (left right)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct term-prod
   (left right)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct term-not
   (type)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct term-star
   (type)
-  #:transparent)
+  #:transparent
+  #:prefab)

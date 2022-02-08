@@ -19,7 +19,7 @@
       (provide parser
                pretty
                (all-from-out typed-peg/tree))
-      
+
       (require typed-peg/parser
                typed-peg/pretty
                typed-peg/tree)

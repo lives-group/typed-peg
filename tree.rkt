@@ -6,24 +6,30 @@
 
 (struct tunit
   ()
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct tchr
   (symb)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct tpair
   (fst snd)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct tleft
   (tree)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct tright
   (tree)
-  #:transparent)
+  #:transparent
+  #:prefab)
 
 (struct tlist
   (elems)
-  #:transparent)
+  #:transparent
+  #:prefab)
