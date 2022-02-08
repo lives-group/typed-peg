@@ -17,7 +17,7 @@
    (error
     (lambda (a b c d e)
       (begin
-        (printf "a = ~a\nb = ~a\nc = ~a\nd = ~a\ne = ~a\n"
+        (printf "Model parser error\na = ~a\nb = ~a\nc = ~a\nd = ~a\ne = ~a\n"
                 a
                 b
                 c
