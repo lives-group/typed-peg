@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Install Z3
         uses: pavpanchekha/setup-z3@1.2.2
+        with:
+          version: 4.8.14
       - uses: actions/checkout@v2
       - uses: Bogdanp/setup-racket@v0.12
         with:
