@@ -3,7 +3,7 @@ name: CI
 jobs:
   build:
     name: "Build on Racket '${{ matrix.racket-version }}' (${{ matrix.racket-variant }})"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     strategy:
       matrix:
         racket-version: ["stable", "current"]
@@ -13,6 +13,7 @@ jobs:
         uses: pavpanchekha/setup-z3@1.2.2
         with:
           version: 4.8.14
+          distribution: ubuntu-18.04
       - uses: actions/checkout@v2
       - uses: Bogdanp/setup-racket@v0.12
         with:
