@@ -5,7 +5,7 @@
 @title{typed-peg: A parsing library for parsing expression grammars}
 @author{Elton Cardoso, Leonardo Reis, Rodrigo Ribeiro}
 
-@defmodule[peg]
+@defmodule[typed-peg]
 
 @section{Introduction}
 
