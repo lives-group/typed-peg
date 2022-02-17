@@ -94,6 +94,5 @@
     (check-equal?  (allTypesMatch (solution2context (infer (peg2struct peg))) (last peg)) #t)
   )
 
-
 (check-property type-checks)
 (check-property type-contexts-match)
