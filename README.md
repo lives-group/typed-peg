@@ -1,6 +1,8 @@
 Typed-PEG
 ============
 
+![example workflow](https://github.com/lives-group/typed-peg/actions/workflows/main.yml/badge.svg)
+
 Intro
 ------
 
