@@ -1,37 +1,23 @@
-# This is a basic workflow to help you get started with Actions
-
-name: build
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  - push
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  test:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Install Z3
+        uses: pavpanchekha/setup-z3@1.2.2
+        with:
+          version: '4.8.14'
       - name: Install Racket
-        uses: Bogdanp/setup-racket@v1.6.1
+        uses: Bogdanp/setup-racket@v1.6.2
         with:
           architecture: 'x64'
           distribution: 'full'
-          version: '8.2'
-          packages: ['peg-gen' 'pprint']
-      # Runs a single command using the runners shell
-      
-      - name: compile
+          version: '8.4'
+      - name: Install Package and its Dependencies
+        run: raco pkg install --auto --batch
+      - name: Compile
         run: raco make main.rkt
