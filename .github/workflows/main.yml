@@ -1,16 +1,20 @@
 on:
   - push
 
+env:
+  Z3_URL: "https://github.com/Z3Prover/z3/releases/download/z3-4.8.14/z3-4.8.14-x64-glibc-2.31.zip"
+
 jobs:
   test:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@master
       - name: Install Z3
-        uses: pavpanchekha/setup-z3@1.2.2
-        with:
-          version: '4.8.10'
+        run: |
+          mkdir bin                  &&
+          wget $Z3_URL -nv -O bin/z3 &&
+          chmod +x bin/z3
       - name: Install Racket
         uses: Bogdanp/setup-racket@v1.6.1
         with:
