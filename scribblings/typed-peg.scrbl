@@ -21,6 +21,26 @@ In order to type check, the tool need a working installation of
 [Z3 SMT Solver](https://github.com/Z3Prover/z3). The project is known to work with 
 Z3 version 4.8.14.
 
+@section{The language typed-peg}
+
+Programs written in typed-peg language consist of a parsing expression grammar
+close to Ford's original notations for PEGs. When imported, the module will provide
+two functions:
+
+@itemlist[#:style 'ordered
+          @item{parse: this function takes an input string and returns a parse tree
+                which corresponds to how the string was matched by the grammar.}
+          @item{pretty: this functions takes a parse tree as input and returns its
+                underlying string.}]
+
+Parse trees for PEGs follow the structure of the parsing expressions, similarly for
+regular expression parser trees.
+
+@section{Limitations}
+
+Currently, the library only supports the core syntax for parsing expressions. We intend
+to implement other operators in future versions of the library.
+
 @section{Languages}
 
 Following the racket approach to build small languages, we have build some auxiliar languages 
