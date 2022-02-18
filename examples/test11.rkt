@@ -1,4 +1,4 @@
-#lang typed-peg/debug/infer-only
+#lang typed-peg/untyped
 
 I <-- '1' epsilon;
 L <-- I I ;

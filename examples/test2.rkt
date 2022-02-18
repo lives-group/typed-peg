@@ -1,4 +1,4 @@
-#lang typed-peg
+#lang typed-peg/untyped
 
 S <-- 'a' S 'a' / epsilon ;
 
