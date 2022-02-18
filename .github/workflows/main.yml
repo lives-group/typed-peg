@@ -14,7 +14,8 @@ jobs:
         run: |
           mkdir bin                  &&
           wget $Z3_URL -nv -O bin/z3 &&
-          chmod +x bin/z3
+          chmod +x bin/z3            &&
+          export PATH="$PATH:/bin"
       - name: Install Racket
         uses: Bogdanp/setup-racket@v1.6.1
         with:
