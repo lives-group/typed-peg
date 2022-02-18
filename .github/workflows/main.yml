@@ -15,7 +15,7 @@ jobs:
           mkdir bin                  &&
           wget $Z3_URL -nv -O bin/z3 &&
           chmod +x bin/z3            &&
-          ln -s bin/z3 /usr/bin/z3
+          mv bin/z3 /usr/bin/z3
       - name: Install Racket
         uses: Bogdanp/setup-racket@v1.6.1
         with:
