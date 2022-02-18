@@ -3,9 +3,7 @@
 (define deps '("base"
                "pprint"
                "peg-gen"))
-(define build-deps '("pprint"
-                     "peg-gen"
-                     "scribble-lib"
+(define build-deps '("scribble-lib"
                      "racket-doc"
                      "rackunit-lib"))
 (define scribblings '(("scribblings/typed-peg.scrbl" ())))

@@ -19,7 +19,7 @@
   (define grammar (parse port))
   (let ([types (infer grammar)])
     (if (eq? (cdr types) 'unsat)
-        (error "The grammar isn't well-typed! It can loop on some inputs.")
+        (displayln "The grammar isn't well-typed! It can loop on some inputs.")
         (datum->syntax
          #f
          `(module peg-mod racket
