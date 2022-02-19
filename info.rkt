@@ -3,6 +3,7 @@
 (define deps '("base"
                "pprint"
                "peg-gen"
+               "rackcheck"
                "parser-tools-lib"))
 (define build-deps '("scribble-lib"
                      "racket-doc"
