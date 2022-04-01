@@ -29,6 +29,7 @@
             [(atom) $1])
     (atom [(EPSILON) (peps)]
           [(CHAR)    (pchr (car (string->list $1)))]
+          [(ANY)     (pany)]
           [(VAR)     (pvar $1)]
           [(LPAREN expr RPAREN) $2])
     )))

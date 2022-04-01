@@ -7,12 +7,13 @@
   (CHAR VAR))
 
 (define-empty-tokens op-tokens
-  (EOF OR LPAREN RPAREN STAR NOT SEMI EPSILON ARROW START))
+  (EOF OR LPAREN RPAREN STAR NOT SEMI EPSILON ARROW START ANY))
 
 (define next-token
   (lexer-src-pos
    [(eof) (token-EOF)]
    [(:+ whitespace #\newline) (return-without-pos (next-token input-port))]
+   ["." (token-ANY)]
    ["/" (token-OR)]
    ["*" (token-STAR)]
    ["<--" (token-ARROW)]

@@ -12,6 +12,10 @@
   (symb)
   #:prefab)
 
+(struct pany
+  ()
+  #:prefab)
+
 (struct pvar
   (name)
   #:prefab)

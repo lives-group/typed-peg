@@ -27,6 +27,11 @@
          (cons (tchr c) s1)
          '())]))
 
+(define (run-any s)
+  (match s
+    ['() '()]
+    [(cons c s1) (cons (tchr c) s1)]))
+
 (define (run-var g v s)
   (match (assoc v g)
     [#f (begin
@@ -71,6 +76,7 @@
   (match e
     [(peps) (run-eps s)]
     [(pchr c) (run-chr c s)]
+    [(pany) (run-any s)]
     [(pvar v) (run-var g v s)]
     [(pcat e1 e2) (run-cat g e1 e2 s)]
     [(pchoice e1 e2) (run-choice g e1 e2 s)]
