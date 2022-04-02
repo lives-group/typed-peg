@@ -4,7 +4,7 @@
          (prefix-in : parser-tools/lex-sre))
 
 (define-tokens value-tokens
-  (CHAR VAR))
+  (CHAR VAR STRING))
 
 (define-empty-tokens op-tokens
   (EOF OR LPAREN RPAREN STAR NOT SEMI EPSILON ARROW START ANY))
@@ -23,11 +23,14 @@
    ["start:" (token-START)]
    [#\( (token-LPAREN)]
    [#\) (token-RPAREN)]
+   [(:seq #\" (complement (:seq any-string #\" any-string)) #\")
+    (token-STRING (let* ([s lexeme]
+                         [n (string-length s)])
+                    (substring s 1 (- n 1))))]
    [(:seq alphabetic (:* (:+ alphabetic numeric)))
     (token-VAR lexeme)]
-   [(:seq #\' any-char #\') (token-CHAR (let* ([s lexeme]
-                                               [n (string-length s)])
-                                          (substring s 1 (- n 1))))]))
+   [(:seq #\' any-char #\') (token-CHAR (let* ([s lexeme])
+                                          (substring s 1 1)))]))
 
 
 (provide value-tokens op-tokens next-token)

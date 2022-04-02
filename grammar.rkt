@@ -4,6 +4,15 @@
          typed-peg/core
          typed-peg/lexer)
 
+;; converting a string token into a tree of
+;; characters concatenation
+
+(define (string->tree s)
+  (match s
+    ['() (peps)]
+    [(cons c s1) (pcat (pchr c)
+                       (string->tree s1))]))
+
 (define core-parser
   (parser
    (start peg)
@@ -29,6 +38,7 @@
             [(atom) $1])
     (atom [(EPSILON) (peps)]
           [(CHAR)    (pchr (car (string->list $1)))]
+          [(STRING)  (string->tree (string->list $1))]
           [(ANY)     (pany)]
           [(VAR)     (pvar $1)]
           [(LPAREN expr RPAREN) $2])
