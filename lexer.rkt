@@ -29,8 +29,9 @@
                     (substring s 1 (- n 1))))]
    [(:seq alphabetic (:* (:+ alphabetic numeric)))
     (token-VAR lexeme)]
-   [(:seq #\' any-char #\') (token-CHAR (let* ([s lexeme])
-                                          (substring s 1 1)))]))
+   [(:seq #\' any-char #\') (token-CHAR (let* ([s lexeme]
+                                               [n (string-length s)])
+                                          (substring s 1 (- n 1))))]))
 
 
 (provide value-tokens op-tokens next-token)

@@ -1,3 +1,3 @@
-#lang typed-peg/untyped
+#lang typed-peg/debug/parse-only
 
 start: ('a' 'a')* / ! .
