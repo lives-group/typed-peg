@@ -7,15 +7,36 @@
   (CHAR VAR STRING))
 
 (define-empty-tokens op-tokens
-  (EOF OR LPAREN RPAREN STAR NOT SEMI EPSILON ARROW START ANY))
+  (EOF OR
+       LPAREN
+       RPAREN
+       STAR
+       NOT
+       SEMI
+       EPSILON
+       ARROW
+       START
+       ANY
+       PLUS
+       OPTION
+       AND
+       LBRACK
+       RBRACK
+       COMMA))
 
 (define next-token
   (lexer-src-pos
    [(eof) (token-EOF)]
    [(:+ whitespace #\newline) (return-without-pos (next-token input-port))]
    ["." (token-ANY)]
+   ["," (token-COMMA)]
+   ["[" (token-LBRACK)]
+   ["]" (token-RBRACK)]
    ["/" (token-OR)]
+   ["+" (token-PLUS)]
+   ["?" (token-OPTION)]
    ["*" (token-STAR)]
+   ["&" (token-AND)]
    ["<--" (token-ARROW)]
    ["!" (token-NOT)]
    [";" (token-SEMI)]
