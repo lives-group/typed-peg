@@ -1,3 +1,4 @@
 #lang typed-peg/debug/parse-only
 
-start: ('a' 'a')* / ! .
+start: & "a" / "bb" +
+

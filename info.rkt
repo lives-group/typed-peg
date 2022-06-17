@@ -2,7 +2,9 @@
 (define collection "typed-peg")
 (define deps '("base"
                "pprint"
-               "peg-gen"))
+               "peg-gen"
+               "rackcheck"
+               "parser-tools-lib"))
 (define build-deps '("scribble-lib"
                      "racket-doc"
                      "rackunit-lib"))

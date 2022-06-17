@@ -18,7 +18,8 @@ i.e. terminates its execution on all inputs.
 @section{Requirements}
 
 In order to type check, the tool need a working installation of 
-[Z3 SMT Solver](https://github.com/Z3Prover/z3). The project is known to work with 
+@hyperlink["https://github.com/Z3Prover/z3"]{Z3 SMT Solver}.
+The project is known to work with
 Z3 version 4.8.14.
 
 @section{The language typed-peg}

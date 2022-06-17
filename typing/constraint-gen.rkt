@@ -47,6 +47,7 @@
   (match e
     [(peps) (constr-eq ty (type #t '()))]
     [(pchr c) (constr-eq ty (type #f '()))]
+    [(pany) (constr-eq ty (type #f '()))]
     [(pvar v) (constr-eq (pvar v)
                          ty)]
     [(pchoice e1 e2)
